@@ -1,0 +1,72 @@
+.content {
+    display :grid;
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-columns: 1% 2FR 1FR 1%;
+    grid-auto-rows: minmax(80px, auto);
+
+    grid-template-areas: 
+    ". header header ."
+    ". nav nav ."
+    ". main section ."
+    ".footer footer .";
+
+    gap: 1px;
+}
+
+header {
+    grid-area: header;
+    background-color: green;
+}
+
+nav {
+ grid-area: nav;
+}
+main{
+    grid-area: main;
+}
+section {
+    grid-area: section;
+}
+
+footer {
+    grid-area: footer;
+}
+.content  > *{
+    background-color: #9c9c9d;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+}
+
+.btn{
+padding: 5px 25px;
+background-color: #ffffff;
+color: rgb(0, 0, 0);
+border: 2px solid rgb(232, 232, 232);
+box-shadow: 2px 2px #000000, 4px 4px rgb(0, 0, 0);
+}
+
+.btn{
+    padding: 5px 25px;
+        cursor: pointer;
+    }
+
+@media (max-width:500px) {
+        .content {
+            display :grid;
+            width: 100vw;
+            min-height: 100vh;
+            grid-template-columns: 1% 1FR 1%;
+            grid-auto-rows: minmax(80px, auto);
+        
+            grid-template-areas: 
+            ". header ."
+            ". nav ."
+            ". main ."
+            ". section ."
+            ". footer .";
+        
+            gap: 1px;
+        }       
+}
