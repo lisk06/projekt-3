@@ -1,72 +1,225 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Font Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+/* CSS Variables for Themes */
+:root {
+    /* Light Theme Colors */
+    --background-color-light: #ffffff;
+    --text-color-light: #333333;
+    --section-background-light: #f8f8f8;
+    --button-background-light: #4CAF50;
+    --button-text-light: #ffffff;
+    --hover-background-light-header: #666666; /* Unique hover color for header */
+    --hover-background-light-main: #444444; /* Unique hover color for main */
+
+    /* Dark Theme Colors */
+    --background-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --section-background-dark: #1c1c1c;
+    --button-background-dark: #333333;
+    --button-text-dark: #ffffff;
+    --hover-background-dark-header: #888888; /* Unique hover color for header (dark mode) */
+    --hover-background-dark-main: #666666; /* Unique hover color for main (dark mode) */
+}
+
+/* Content Layout */
 .content {
-    display :grid;
+    display: grid;
     width: 100vw;
     min-height: 100vh;
-    grid-template-columns: 1% 2FR 1FR 1%;
-    grid-auto-rows: minmax(80px, auto);
-
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
-    ". header header ."
-    ". nav nav ."
-    ". main section ."
-    ".footer footer .";
-
-    gap: 1px;
+        "header header header"
+        "nav main section"
+        "footer footer footer";
+    gap: 20px;
+    padding: 30px;
+    overflow-x: hidden;
 }
 
+/* Header Styling */
 header {
     grid-area: header;
-    background-color: green;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
 }
 
-nav {
- grid-area: nav;
-}
-main{
-    grid-area: main;
-}
-section {
-    grid-area: section;
-}
-
+/* Footer Styling */
 footer {
     grid-area: footer;
-}
-.content  > *{
-    background-color: #9c9c9d;
-    color: #ffffff;
+    font-size: 30px;
+    height: 80px;
+    padding: 15px 0;
     text-align: center;
-    padding: 5px;
+    background-color: var(--section-background-light);
+    box-shadow: 0 4px 12px red;
+    color: var(--text-color-light);
+    margin-top: 30px;
 }
 
-.btn{
-padding: 5px 25px;
-background-color: #ffffff;
-color: rgb(0, 0, 0);
-border: 2px solid rgb(232, 232, 232);
-box-shadow: 2px 2px #000000, 4px 4px rgb(0, 0, 0);
+/* Button Styling */
+.btn {
+    padding: 15px 30px;
+    background-color: var(--button-background-light);
+    color: var(--button-text-light);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
 }
 
-.btn{
-    padding: 5px 25px;
-        cursor: pointer;
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: var(--hover-background-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px red;
+}
+
+/* Focus effect for buttons */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.content.dark-mode > *:not(footer) {
+    color: var(--text-color-dark);
+    background-color: var(--section-background-dark);
+}
+
+/* Hover effects in dark mode */
+.content.dark-mode > nav:hover {
+    background-color: var(--hover-background-dark-header);
+}
+
+.content.dark-mode > main:hover {
+    background-color: var(--hover-background-dark-main);
+}
+
+.content.dark-mode > section:hover {
+    background-color: var(--hover-background-dark-main)
+
+}
+
+/* Theme Toggle Button */
+#theme-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button-background-light);
+    color: var(--button-text-light);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the toggle button */
+#theme-toggle-btn:hover {
+    background-color: var(--hover-background-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px red;
+}
+
+/* Section Styling (for main, section, nav) */
+.content > *:not(footer) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--text-color-light);
+    background-color: var(--section-background-light);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: auto;
+}
+
+/* Hover effect for sections */
+.content > main:hover {
+    background-color: var(--hover-background-light-main);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect for nav */
+.content > nav:hover {
+    background-color: var(--hover-background-light-header);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect for section */
+.content > section:hover {
+    background-color: var(--hover-background-light-header);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "section"
+            "footer";
+        padding: 20px;
     }
 
-@media (max-width:500px) {
-        .content {
-            display :grid;
-            width: 100vw;
-            min-height: 100vh;
-            grid-template-columns: 1% 1FR 1%;
-            grid-auto-rows: minmax(80px, auto);
-        
-            grid-template-areas: 
-            ". header ."
-            ". nav ."
-            ". main ."
-            ". section ."
-            ". footer .";
-        
-            gap: 1px;
-        }       
+    header {
+        font-size: 50px;
+    }
+
+    .btn {
+        width: 45%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 35px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+    }
 }
