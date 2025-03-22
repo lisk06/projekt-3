@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -12,15 +21,28 @@ body {
     color: var(--text-color-light);
 }
 
+<<<<<<< Updated upstream
 :root {
+=======
+
+:root {
+
+>>>>>>> Stashed changes
     --background-color-light: #ffffff;
     --text-color-light: #333333;
     --section-background-light: #f8f8f8;
     --button-background-light: #4CAF50;
     --button-text-light: #ffffff;
+<<<<<<< Updated upstream
     --hover-background-light-header: #666666;
     --hover-background-light-main: #444444; 
 
+=======
+    --hover-background-light-header: #666666; 
+    --hover-background-light-main: #444444; 
+
+   
+>>>>>>> Stashed changes
     --background-color-dark: #121212;
     --text-color-dark: #e0e0e0;
     --section-background-dark: #1c1c1c;
@@ -37,7 +59,7 @@ body {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
         "header header header"
-        "nav main section"
+         "nav main section"
         "footer footer footer";
     gap: 20px;
     padding: 30px;
@@ -53,6 +75,10 @@ header {
     font-size: 48px;
     font-weight: bold;
     position: relative;
+    background-color: RED; 
+    color: blue;
+    padding: 10px 0;
+    text-align: center;
 }
 
 footer {
@@ -202,4 +228,90 @@ body.dark-mode {
         width: 100%;
         font-size: 14px;
     }
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+#image-display {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+header {
+    position: relative;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #45a049; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.dropdown-content.show {
+    display: block;
+
+}
+
+
+.dropdown {
+    position: absolute; 
+    left: 0; 
+    top: 0;
 }

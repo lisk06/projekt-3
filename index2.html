@@ -10,43 +10,57 @@
 <body>
     <div class="content">
 
-<header>Säkringsschema
+        <header>
+            Säkringsschema
+            <button id="theme-toggle-btn" class="btn">Toggle Theme</button>
+            
+          
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="https://www.teknikum.se" target="_blank">teknikum</a>
+                   <a href="https://www.aftonbladet.se" target="_blank">Aftonbladet</a>
+                    <a href="https://www.eaforetagen.se/ea-el/" target="_blank">Ea el</a>
+                </div>
+            </div>
+            
+        </header>
 
-    <button id="theme-toggle-btn" class="btn">
-    Toggle Theme    
-    </button>
+        <main>
+            <div class="main-content">
+                <h1 id="main-title">Worker</h1>
+                <img id="image-display" src="images/fuses1.jpg" alt="Fuses Image">
+            </div>
+        </main>
+        
+        <nav>
+            <div class="main-content">
+                <h1 style="margin-bottom: 40px;">Säkringar</h1>
+               
+                <button class="btn" style="background-color: green; color: white;" id="button6A">6A</button>
+                <button class="btn" style="background-color: red; color: white;" id="button10A">10A</button>
+                <button class="btn" style="background-color: black; color: white;" id="button13A">13A</button>
+                <button class="btn" style="background-color: gray; color: white;" id="button16A">16A</button>
+                <button class="btn" style="background-color: blue; color: white;" id="button20A">20A</button>           
+                <button class="btn" style="background-color: yellow; color: black;" id="button25A">25A</button>
+            </div>
+        </nav>
 
-</header>
-
-<main>
-    <div class="main-content">           
-    <h1>Bild säkringar<h1>
-    <img src="images/Fuses2.png" alt="">
-</main>  
-      
-<nav>
-    <div class="main-content">
-    <h1>Säkringar<h1>
-    <button class="btn" style="background-color: green; color: white;" onclick="window.location.href='https://www.google.com';">6A</button>
-    <button class="btn" style="background-color: red; color: white;" onclick="window.location.href='https://www.google.com';">10A</button>
-    <button class="btn" style="background-color: black; color: white;" onclick="window.location.href='https://www.google.com';">13A</button>
-    <button class="btn" style="background-color: gray; color: white;" onclick="window.location.href='https://www.google.com';">16A</button>
-    <button class="btn" style="background-color: blue; color: white;" onclick="window.location.href='https://www.google.com';">20A</button>           
-    <button class="btn" style="background-color: yellow; color: black;" onclick="window.location.href='https://www.example.com';">25A</button>
-</nav>
-
-<section>
-    <div class="main-content">
-    <h1>Kontakt<h1>
-    <button class="btn" style="background-color: red; color: white;" onclick="window.location.href='bulma.html';">Kontakt formulär</button>
-</section>
-
-
-<footer>
-    Made by Skogis
-</footer>
-
+        <section>
+            <div class="main-content">
+                <h1 style="margin-bottom: 40px;">Kontakt</h1>                
+              
+                <button class="btn" onclick="window.location.href='bulma.html';">
+                    <img src="images/mail.jpg" alt="Mail" style="width: 100%; height: auto; border: none; cursor: pointer;">
+                </button>
+            </div>
+        </section>
+        
+        <footer>
+            Made by Linus
+        </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
